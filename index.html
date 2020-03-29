@@ -4,36 +4,23 @@
         <title>Registration form </title>
     </head>
     <body>
-        <form style="font:georgia">
+        <form style="font:georgia" action="action.php" method="post">
             <fieldset>
 
                 <legend align="center">Register</legend><br>
                 <pre>
                  <label for="fname" >First name:</label>
-                 <input type="text" id="fname" name="fname" placeholder="First name" required><br>
+                 <input type="text"  name="fname" placeholder="First name" required><br>
                  <label for="fname">Last name:</label>
-                 <input type="text" id="lname" name="lname" placeholder="Lastname" required><br>
+                 <input type="text"  name="lname" placeholder="Lastname" required><br>
                  <label for="mail" >mail:</label>
-                 <input type="text" id="mail" name="mail" placeholder="priya@gmail.com" required><br>
+                 <input type="text" name="mail" placeholder="priya@gmail.com" required><br>
                  <label for="password">Password:</label>
-                 <input type ="password" id="password" name="password" placeholder="Password" required><br>
+                 <input type ="password"  name="password" placeholder="Password" required><br>
                  <label for="confirmpassword">Confirm Password:</label>
-                 <input type ="password" id=" confirmpassword" name="confirmpassword" placeholder="Confirm Password" required><br>
-                 <button onclick="myfunction()" >Register</button>
-                 <script>
-                    function myfunction(){
-                        var password=document.getElementsById("password")
-                        var confirmpassword=document.getElementsById("confirmpassword")
-                        if(password.value!=confirmpassword.value){
-                            confirmpassword.setCustomValidity("Please make sure your passwords match.")}
-                        else{
-                            confirmpassword.setCustomValidity('')
-                        }
-                        password.onchange =validatePassword;
-                        confirmpassword.onkeyup=validatepassword;
-                        }
-                </script>
-                </pre>
+                 <input type ="password"  name="confirmpassword" placeholder="Confirm Password" required><br>
+                 <input type="submit" name="submit" value="Register">
+                </pre
             </fieldset>
         </form>
 
