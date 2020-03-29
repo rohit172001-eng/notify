@@ -13,10 +13,12 @@
                  <input type="text" id="fname" name="fname" placeholder="First name" required><br>
                  <label for="fname">Last name:</label>
                  <input type="text" id="lname" name="lname" placeholder="Lastname" required><br>
-                 <label for="mail" >mail:</label>
                  <input type="text" id="mail" name="mail" placeholder="priya@gmail.com" required><br>
+                 <label for="email" >email:</label>
+                 <input type="text" id="email" name="email" placeholder="priya@gmail.com" required><br>
                  <label for="password">Password:</label>
-                 <input type ="password" id="password" name="password" placeholder="Password" required><br>
+                 <input type ="password" id="password" name="password" placeholder="Password" pattern=".{8,}" 
+                                                              title="minimum 8 characters"required><br>
                  <label for="confirmpassword">Confirm Password:</label>
                  <input type ="password" id=" confirmpassword" name="confirmpassword" placeholder="Confirm Password" required><br>
                  <button onclick="myfunction()" >Register</button>
