@@ -1,0 +1,50 @@
+body{
+    background:norepeat top center;
+    background-size:cover;
+    height:10vh;
+    font-family:calibri;
+    background-color:#da99b7;
+}
+.box{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50% ,-50%);
+    padding:0 20px; 
+    width:450px;
+    margin : 0 auto;
+    background : rgba(0, 0, 0, 0.5);
+    border-radius:10px;
+    padding:15px;
+    text-align : center;
+}
+h1{
+    align : center;
+    font-size : 150%;
+}
+.box input[type="text"],.box input[type="password"]{
+    border : 0;
+    background :whitesmoke;
+    display : block;
+    margin:20px auto;
+    text-align : center;
+    border : 2px solid #2459bb;
+    padding :10px 10px;
+    border-radius :20px;
+    outline:none;   
+}
+.box input[type="submit"]{
+    border : 0;
+    background :rgb(6, 170, 75);
+    display : block;
+    text-align : center;
+    margin:20px auto;
+    padding :10px 20px;
+    border-radius :20px;
+    outline:none;
+    cursor:pointer;   
+}
+.box input[type="text"]:focus,.box input[type="password"]:focus{
+    width:250px;
+    border-color : #0ca732;
+}
