@@ -3,7 +3,7 @@ body{
     background-size:cover;
     height:10vh;
     font-family:calibri;
-    background-color:#da99b7;
+    color:rgb(255, 255, 255);
 }
 .box{
     position:absolute;
