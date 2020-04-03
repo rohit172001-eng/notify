@@ -4,11 +4,14 @@ function alert($msg) {
 }
 if(isset($_POST['submit']))
 {
-  $pass=$_POST["password"];
-  $cpass=$_POST["confirmpassword"];
-  $fname=$_POST["fname"];
-  $lname=$_POST["lname"];
-  $email=$_POST["email"];
+  include 'db_connect.php';
+  $conn = OpenCon();//function to connect to database
+  //filtering input before going to database
+  $pass=mysqli_real_escape_string($conn,$_POST["password"]);
+  $cpass=mysqli_real_escape_string($conn,$_POST["confirmpassword"]);
+  $fname=mysqli_real_escape_string($conn,$_POST["fname"]);
+  $lname=mysqli_real_escape_string($conn,$_POST["lname"]);
+  $email=mysqli_real_escape_string($conn,$_POST["email"]);
   if ($pass!=$cpass) {
     alert("PASSWORDS NOT SAME");
     // header("Location:kp.html");
@@ -23,10 +26,10 @@ if(isset($_POST['submit']))
     </head>
 
     <body >
-        <img src="https://images.mentalfloss.com/sites/default/files/styles/mf_image_16x9/public/headerbooks.jpg?itok=VXk5ovFG&resize=1100x1100" 
+        <img src="https://images.mentalfloss.com/sites/default/files/styles/mf_image_16x9/public/headerbooks.jpg?itok=VXk5ovFG&resize=1100x1100"
                                                                                      width="100%" height="1060%" >
         <form class="box" action="#" method="post">
-            <fieldset padding="20px"> 
+            <fieldset padding="20px">
                 <h1 >Register</h1>
                 <hr></hr>
                  <label for="fname" >First name:</label>
@@ -51,6 +54,14 @@ if(isset($_POST['submit']))
   }
   else {
     alert("REGISTRATION SUCCESSFULLL");
+    $sql = "INSERT INTO users (name,email,pass) VALUES ('$fname', '$email', '$pass')";//preparing query to insert
+    if(mysqli_query($conn, $sql)){
+        alert("Records added successfully.");
+    } else{
+        alert("ERROR: Could not able to execute $sql. " . mysqli_error($conn));
+    }
+
+
     // code...
   }
 
