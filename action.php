@@ -27,22 +27,22 @@ if(isset($_POST['submit']))
     </head>
 
     <body >
-    <div class="page">                                                    
+    <div class="page">
          <form action="action.php" method="post">
                 <h1 >Register to get Notification for VCE website changes</h1>
                 <hr></hr>
              <ul class="box">
                 <li>
                     <label for="fname" >First name:</label>
-                    <input type="text" id="fname" name="fname" placeholder="First name" autofocus required>
+                    <input type="text" id="fname" name="fname" placeholder="First name" value="<?php echo $fname; ?>" autofocus required>
                 </li>
                 <li>
-                    <label for="fname">Last name:</label>        
-                    <input type="text" id="lname" name="lname" placeholder="Lastname" required>
+                    <label for="fname">Last name:</label>
+                    <input type="text" id="lname" name="lname" placeholder="Lastname" value="<?php echo $lname; ?>" required>
                 </li>
                 <li>
                     <label for="email" >email:</label>
-                    <input type="text"  id="email" name="email" placeholder="mymail@gmail.com" required>
+                    <input type="text"  id="email" name="email" placeholder="mymail@gmail.com" value="<?php echo $email; ?>"  required>
                 </li>
                 <li>
                     <label for="password">Password:</label>
@@ -65,13 +65,25 @@ if(isset($_POST['submit']))
     // code...
   }
   else {
-    alert("REGISTRATION SUCCESSFULLL");
-    $sql = "INSERT INTO users (name,email,pass) VALUES ('$fname', '$email', '$pass')";//preparing query to insert
-    if(mysqli_query($conn, $sql)){
-        alert("Records added successfully.");
-    } else{
-        alert("ERROR: Could not able to execute $sql. " . mysqli_error($conn));
+
+    $sql = "SELECT * FROM users WHERE email='".$email."'";
+    $result = $conn->query($sql);
+    if($result->num_rows==0)
+    {
+        $sql = "INSERT INTO users (name,email,pass) VALUES ('$fname', '$email', '$pass')";//preparing query to insert
+        if(mysqli_query($conn, $sql)){
+            alert("Records added successfully.");
+            alert("REGISTRATION SUCCESSFULLL");
+        } else{
+            alert("ERROR: Could not able to execute $sql. " . mysqli_error($conn));
+        }
     }
+    else {
+      alert("Email ID Already registered....Redirecting to Login page..");
+      header( "Refresh:1; url=index.html", true, 303);
+      //header("Location:index.html");
+    }
+
 
 
     // code...
