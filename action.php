@@ -22,30 +22,42 @@ if(isset($_POST['submit']))
     <head>
         <meta charset="UTF-8">
         <title>Registration form </title>
+        <link rel="shortcut icon" href="https://1.bp.blogspot.com/-NglZlyont9M/VFIUvVXoX_I/AAAAAAAAMtc/heLvdxujhqw/s1600/VCE%2Bexam%2Bsimulator%2BIcon.png" type="image/png">
         <link rel="stylesheet" href="style.css">
     </head>
 
     <body >
-        <img src="https://images.mentalfloss.com/sites/default/files/styles/mf_image_16x9/public/headerbooks.jpg?itok=VXk5ovFG&resize=1100x1100"
-                                                                                     width="100%" height="1060%" >
-        <form class="box" action="#" method="post">
-            <fieldset padding="20px">
-                <h1 >Register</h1>
+    <div class="page">                                                    
+         <form action="action.php" method="post">
+                <h1 >Register to get Notification for VCE website changes</h1>
                 <hr></hr>
-                 <label for="fname" >First name:</label>
-                 <input type="text" name="fname" placeholder="First name" value="<?php print $fname;?>" autofocus required>
-                 <label for="fname">Last name:</label>
-                 <input type="text" name="lname" placeholder="Lastname" value="<?php print $lname;?>" required>
-                 <label for="email" >email:</label>
-                 <input type="text" name="email" placeholder="mymail@gmail.com" value="<?php print $email;?>" required>
-                 <label for="password">Password:</label>
-                 <input type ="password" name="password" placeholder="Password" pattern=".{8,}"
-                                                                         title="minimum 8 characters" required>
-                 <label for="confirmpassword">Confirm Password:</label>
-                 <input type ="password" name="confirmpassword" placeholder="Confirm Password" required><br>
-                 <input type="submit" name="submit" value="Register" >
-            </fieldset>
+             <ul class="box">
+                <li>
+                    <label for="fname" >First name:</label>
+                    <input type="text" id="fname" name="fname" placeholder="First name" autofocus required>
+                </li>
+                <li>
+                    <label for="fname">Last name:</label>        
+                    <input type="text" id="lname" name="lname" placeholder="Lastname" required>
+                </li>
+                <li>
+                    <label for="email" >email:</label>
+                    <input type="text"  id="email" name="email" placeholder="mymail@gmail.com" required>
+                </li>
+                <li>
+                    <label for="password">Password:</label>
+                    <input type ="password" id="password" name="password" placeholder="Password" pattern=".{8,}"
+                    title="minimum 8 characters" required>
+                </li>
+                <li>
+                    <label for="confirmpassword">Confirm Password:</label>
+                    <input type ="password"  id=" confirmpassword" name="confirmpassword" placeholder="Confirm Password" required><br>
+                </li>
+                <li>
+                      <input type="submit" name="submit" value="Register" >
+                </li>
         </form>
+        </div>
     </body>
 </html>
 
