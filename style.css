@@ -1,5 +1,7 @@
 body{
     font-family:calibri;
+    background-color:rgb(22, 145, 245);
+    color:white;
 }
 
 .page{
@@ -16,7 +18,7 @@ body{
 }
 h1{
     align : center;
-    font-size : 150%;
+    font-size : 180%;
 }
 hr{
     background-color:#fafafa;
@@ -27,6 +29,7 @@ hr{
     max-width:1000px;
     margin:0 auto;
     padding:0;
+    font-size:120%;
 }
 .box li{
     display:flex;
