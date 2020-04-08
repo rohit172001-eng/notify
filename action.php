@@ -85,8 +85,8 @@ if(isset($_POST['submit']))
     {
         $sql = "INSERT INTO users (name,email,pass,rollno,phno) VALUES ('$fname', '$email', '$pass','$rollno','$phno')";//preparing query to insert
         if(mysqli_query($conn, $sql)){
-            alert("Records added successfully.");
             alert("REGISTRATION SUCCESSFULLL");
+          
                 ?>
 
                 <!DOCTYPE html>
