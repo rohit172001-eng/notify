@@ -13,6 +13,7 @@ body{
     padding:30px;
     text-align : center;
 }
+
 .page *{
     box-sizing:border-box;
 }
@@ -49,8 +50,8 @@ hr{
     border : 2px solid #2459bb;
     padding :10px 10px;
     border-radius :20px;
-    outline:none;  
-    resize:vertical; 
+    outline:none;
+    resize:vertical;
 }
 .page li input[type="submit"]{
     border : 0;
@@ -61,7 +62,7 @@ hr{
     padding :10px 20px;
     border-radius :20px;
     outline:none;
-    cursor:pointer;   
+    cursor:pointer;
 }
 .page input[type="text"]:focus,.page input[type="password"]:focus{
     width:250px;

@@ -48,11 +48,13 @@ if(isset($_POST['submit']))
                 </li>
                 <li>
                     <label for="phno" >Phno:</label>
-                    <input type="text"  id="phno" name="phno" placeholder="10-digit" value="<?php echo $phno; ?>">
+                    <input type="text"  id="phno" name="phno" placeholder="10-digit" value="<?php echo $phno; ?>" pattern=".{10,}"
+                    title="Invalid Number">
                 </li>
                 <li>
                     <label for="rollno">Roll Number:</label>
-                    <input type="text" id="rollno" name="rollno" placeholder="1602-18-735-031" value="<?php echo $rollno; ?>">
+                    <input type="text" id="rollno" name="rollno" placeholder="1602-18-735-031" value="<?php echo $rollno; ?>" pattern=".{12,}"
+                    title="Enter your 12 digit phone number">
                 </li>
                 <li>
                     <label for="password">Password:</label>
@@ -82,8 +84,82 @@ if(isset($_POST['submit']))
     {
         $sql = "INSERT INTO users (name,email,pass,rollno,phno) VALUES ('$fname', '$email', '$pass','$rollno','$phno')";//preparing query to insert
         if(mysqli_query($conn, $sql)){
+          session_start();
+          $_SESSION['uname'] = $fname;
             alert("Records added successfully.");
             alert("REGISTRATION SUCCESSFULLL");
+            if(isset($_SESSION["uname"]))
+              {
+                ?>
+                <!DOCTYPE html>
+                <html lang="en" dir="ltr">
+                  <head>
+                    <meta charset="utf-8">
+                    <title>Registration Successfull</title>
+                    <meta name="viewport" content ="width=device-width,initial-scale=1,user-scalable=yes" />
+                    <link rel="shortcut icon" href="https://1.bp.blogspot.com/-NglZlyont9M/VFIUvVXoX_I/AAAAAAAAMtc/heLvdxujhqw/s1600/VCE%2Bexam%2Bsimulator%2BIcon.png" type="image/png">
+                    <link rel="stylesheet" href="css/style.css">
+                    <link rel="stylesheet" href="css/type.css">
+
+
+                  </head>
+                  <body>
+                <ul class="box">
+                  <li>
+
+                  </li>
+
+                  <div class="page">
+                    <div class="typewriter">
+                    <center><h5>Registration Successfull....</h5></center>
+                  </div>
+
+                          <hr></hr>
+                          <br>
+                       <ul class="box">
+                          <!-- <li>
+                              <label for="fname" >First name:*</label>
+                              <input type="text" id="fname" name="fname" placeholder="First name" autofocus required>
+                          </li> -->
+
+                            <span>&#9993;</span>
+                            <div class="typewriter">
+                            <center><h5>Contact Us ....</h5></center>
+                            <h6 style="font-family:courier;">maheshstores.vr@gmail.com</h6>
+                          </div>
+
+
+                        <!-- <span>&#9758;</span> -->
+                <br><br>
+                          <div class="typewriter">
+                          <center><h5 style="font-family:courier;">Thank You....</h5></center>
+                          </div>
+                          <br><br>
+                      <div class="page">
+                        <span>&#9997;</span>
+                        <div class="typewriter">
+                        <center><h5>About Us ....</h5></center>
+                        <h6  style="font-family:courier;">Front-end Developer - keerthi</h6>
+                        <h6 style="font-family:courier;">Back-end Developer - Rohit Lingala</h6>
+                      </div>
+
+                      </div>
+
+
+
+
+                  </body>
+                </html>
+
+                <?php
+
+                header( "Refresh:5; url=index.html", true, 303);
+              // code...
+            }
+
+
+
+
         } else{
             alert("ERROR: Could not able to execute $sql. " . mysqli_error($conn));
         }
