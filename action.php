@@ -6,7 +6,8 @@ if(isset($_POST['submit']))
 {
   include 'db_connect.php';
   $conn = OpenCon();//function to connect to database
-  //filtering input before going to database
+
+  filtering input before going to database
   $pass=mysqli_real_escape_string($conn,$_POST["password"]);
   $cpass=mysqli_real_escape_string($conn,$_POST["confirmpassword"]);
   $fname=mysqli_real_escape_string($conn,$_POST["fname"]);
@@ -25,7 +26,7 @@ if(isset($_POST['submit']))
         <meta charset="UTF-8">
         <title>Registration form </title>
         <link rel="shortcut icon" href="https://1.bp.blogspot.com/-NglZlyont9M/VFIUvVXoX_I/AAAAAAAAMtc/heLvdxujhqw/s1600/VCE%2Bexam%2Bsimulator%2BIcon.png" type="image/png">
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="css/style.css">
     </head>
 
     <body >
@@ -84,13 +85,10 @@ if(isset($_POST['submit']))
     {
         $sql = "INSERT INTO users (name,email,pass,rollno,phno) VALUES ('$fname', '$email', '$pass','$rollno','$phno')";//preparing query to insert
         if(mysqli_query($conn, $sql)){
-          session_start();
-          $_SESSION['uname'] = $fname;
             alert("Records added successfully.");
             alert("REGISTRATION SUCCESSFULLL");
-            if(isset($_SESSION["uname"]))
-              {
                 ?>
+
                 <!DOCTYPE html>
                 <html lang="en" dir="ltr">
                   <head>
@@ -150,12 +148,11 @@ if(isset($_POST['submit']))
 
                   </body>
                 </html>
-
                 <?php
 
                 header( "Refresh:7; url=timer.html", true, 303);
               // code...
-            }
+
 
 
 
