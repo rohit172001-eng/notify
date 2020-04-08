@@ -6,15 +6,23 @@ if(isset($_POST['submit']))
 {
   include 'db_connect.php';
   $conn = OpenCon();//function to connect to database
-
-  filtering input before going to database
-  $pass=mysqli_real_escape_string($conn,$_POST["password"]);
-  $cpass=mysqli_real_escape_string($conn,$_POST["confirmpassword"]);
-  $fname=mysqli_real_escape_string($conn,$_POST["fname"]);
-  $lname=mysqli_real_escape_string($conn,$_POST["lname"]);
-  $email=mysqli_real_escape_string($conn,$_POST["email"]);
-  $rollno=mysqli_real_escape_string($conn,$_POST["rollno"]);
-  $phno=mysqli_real_escape_string($conn,$_POST["phno"]);
+  // echo "connected to database successfully";
+  // alert("connected to database successfully");
+  //filtering input before going to database
+  // $pass=mysqli_real_escape_string($conn,$_POST["password"]);
+  // $cpass=mysqli_real_escape_string($conn,$_POST["confirmpassword"]);
+  // $fname=mysqli_real_escape_string($conn,$_POST["fname"]);
+  // $lname=mysqli_real_escape_string($conn,$_POST["lname"]);
+  // $email=mysqli_real_escape_string($conn,$_POST["email"]);
+  // $rollno=mysqli_real_escape_string($conn,$_POST["rollno"]);
+  // $phno=mysqli_real_escape_string($conn,$_POST["phno"]);
+  $pass=clean($_POST["password"]);
+  $cpass=clean($_POST["confirmpassword"]);
+  $fname=clean($_POST["fname"]);
+  $lname=clean($_POST["lname"]);
+  $email=clean($_POST["email"]);
+  $rollno=clean($_POST["rollno"]);
+  $phno=clean($_POST["phno"]);
   if ($pass!=$cpass) {
     alert("PASSWORDS NOT SAME");
     // header("Location:kp.html");
@@ -85,8 +93,8 @@ if(isset($_POST['submit']))
     {
         $sql = "INSERT INTO users (name,email,pass,rollno,phno) VALUES ('$fname', '$email', '$pass','$rollno','$phno')";//preparing query to insert
         if(mysqli_query($conn, $sql)){
+            //alert("Records added successfully.");
             alert("REGISTRATION SUCCESSFULLL");
-          
                 ?>
 
                 <!DOCTYPE html>
