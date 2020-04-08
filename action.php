@@ -12,6 +12,8 @@ if(isset($_POST['submit']))
   $fname=mysqli_real_escape_string($conn,$_POST["fname"]);
   $lname=mysqli_real_escape_string($conn,$_POST["lname"]);
   $email=mysqli_real_escape_string($conn,$_POST["email"]);
+  $rollno=mysqli_real_escape_string($conn,$_POST["rollno"]);
+  $phno=mysqli_real_escape_string($conn,$_POST["phno"]);
   if ($pass!=$cpass) {
     alert("PASSWORDS NOT SAME");
     // header("Location:kp.html");
@@ -45,8 +47,16 @@ if(isset($_POST['submit']))
                     <input type="text"  id="email" name="email" placeholder="mymail@gmail.com" value="<?php echo $email; ?>"  required>
                 </li>
                 <li>
+                    <label for="phno" >Phno:</label>
+                    <input type="text"  id="phno" name="phno" placeholder="10-digit" value="<?php echo $phno; ?>">
+                </li>
+                <li>
+                    <label for="rollno">Roll Number:</label>
+                    <input type="text" id="rollno" name="rollno" placeholder="1602-18-735-031" value="<?php echo $rollno; ?>">
+                </li>
+                <li>
                     <label for="password">Password:</label>
-                    <input type ="password" id="password" name="password" placeholder="Password" pattern=".{8,}"
+                    <input type ="password" id="password" name="password" placeholder="Password" pattern=".{6,}"
                     title="minimum 8 characters" required>
                 </li>
                 <li>
@@ -70,7 +80,7 @@ if(isset($_POST['submit']))
     $result = $conn->query($sql);
     if($result->num_rows==0)
     {
-        $sql = "INSERT INTO users (name,email,pass) VALUES ('$fname', '$email', '$pass')";//preparing query to insert
+        $sql = "INSERT INTO users (name,email,pass,rollno,phno) VALUES ('$fname', '$email', '$pass','$rollno','$phno')";//preparing query to insert
         if(mysqli_query($conn, $sql)){
             alert("Records added successfully.");
             alert("REGISTRATION SUCCESSFULLL");

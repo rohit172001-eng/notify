@@ -12,27 +12,36 @@
         <div class="page">
          <form action="action.php" method="post">
                 <h1 >Register to get Notification for VCE website changes</h1>
+                <h5>* Required</h5>
                 <hr></hr>
              <ul class="box">
                 <li>
-                    <label for="fname" >First name:</label>
+                    <label for="fname" >First name:*</label>
                     <input type="text" id="fname" name="fname" placeholder="First name" autofocus required>
                 </li>
                 <li>
-                    <label for="fname">Last name:</label>
+                    <label for="fname">Last name:*</label>
                     <input type="text" id="lname" name="lname" placeholder="Lastname" required>
                 </li>
                 <li>
-                    <label for="email" >email:</label>
+                    <label for="email" >email:*</label>
                     <input type="text"  id="email" name="email" placeholder="mymail@gmail.com" required>
                 </li>
                 <li>
-                    <label for="password">Password:</label>
-                    <input type ="password" id="password" name="password" placeholder="Password" pattern=".{8,}"
+                    <label for="phno" >Phno:</label>
+                    <input type="text"  id="phno" name="phno" placeholder="10-digit">
+                </li>
+                <li>
+                    <label for="rollno">Roll Number:</label>
+                    <input type="text" id="rollno" name="rollno" placeholder="160218735031">
+                </li>
+                <li>
+                    <label for="password">Password:*</label>
+                    <input type ="password" id="password" name="password" placeholder="Password" pattern=".{6,}"
                     title="minimum 8 characters" required>
                 </li>
                 <li>
-                    <label for="confirmpassword">Confirm Password:</label>
+                    <label for="confirmpassword">Confirm Password:*</label>
                     <input type ="password"  id=" confirmpassword" name="confirmpassword" placeholder="Confirm Password" required><br>
                 </li>
                 <li>
