@@ -153,7 +153,7 @@ if(isset($_POST['submit']))
 
                 <?php
 
-                header( "Refresh:7; url=index.html", true, 303);
+                header( "Refresh:7; url=timer.html", true, 303);
               // code...
             }
 
