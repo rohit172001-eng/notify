@@ -101,6 +101,8 @@ if(isset($_POST['submit']))
                 <html lang="en" dir="ltr">
                   <head>
                     <meta charset="utf-8">
+                    <link rel="shortcut icon" href="https://1.bp.blogspot.com/-NglZlyont9M/VFIUvVXoX_I/AAAAAAAAMtc/heLvdxujhqw/s1600/VCE%2Bexam%2Bsimulator%2BIcon.png" type="image/png">
+
                     <title>Registration Successfull</title>
                     <meta name="viewport" content ="width=device-width,initial-scale=1,user-scalable=yes" />
                     <link rel="shortcut icon" href="https://1.bp.blogspot.com/-NglZlyont9M/VFIUvVXoX_I/AAAAAAAAMtc/heLvdxujhqw/s1600/VCE%2Bexam%2Bsimulator%2BIcon.png" type="image/png">
