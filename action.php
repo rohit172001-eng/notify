@@ -23,6 +23,10 @@ if(isset($_POST['submit']))
   $email=clean($_POST["email"]);
   $rollno=clean($_POST["rollno"]);
   $phno=clean($_POST["phno"]);
+  
+  if ($phno=="") {
+    $rollno=123;
+  }
   if ($pass!=$cpass) {
     alert("PASSWORDS NOT SAME");
     // header("Location:kp.html");
@@ -63,7 +67,7 @@ if(isset($_POST['submit']))
                 <li>
                     <label for="rollno">Roll Number:</label>
                     <input type="text" id="rollno" name="rollno" placeholder="1602-18-735-031" value="<?php echo $rollno; ?>" pattern=".{12,}"
-                    title="Enter your 12 digit phone number">
+                    title="Enter your 12 digit roll number">
                 </li>
                 <li>
                     <label for="password">Password:</label>
